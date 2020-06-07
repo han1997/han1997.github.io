@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前言我基础太差了。就从最简单，能看下去的这本书开始吧 排序桶排序Code： 123456789101112131415#include &lt;stdio.h&gt;int main()&amp;#123;    int a[11],i,j,t;    for(i&#x3D;0;i&lt;&#x3D;10;i++)a[i]&#x3D;0; &#x2F;&#x2F;初始化为0for(i&#x3D;1;i&lt;&#x3D;5;i++) &#x2F;&#x2F;循环读入5个数 &amp;#123;  sc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="啊哈！算法">
+<meta property="og:url" content="http://yoursite.com/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/index.html">
+<meta property="og:site_name" content="汇源果汁吖！">
+<meta property="og:description" content="前言我基础太差了。就从最简单，能看下去的这本书开始吧 排序桶排序Code： 123456789101112131415#include &lt;stdio.h&gt;int main()&amp;#123;    int a[11],i,j,t;    for(i&#x3D;0;i&lt;&#x3D;10;i++)a[i]&#x3D;0; &#x2F;&#x2F;初始化为0for(i&#x3D;1;i&lt;&#x3D;5;i++) &#x2F;&#x2F;循环读入5个数 &amp;#123;  sc">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-07T14:57:53.000Z">
+<meta property="article:modified_time" content="2020-06-07T15:15:27.345Z">
+<meta property="article:author" content="hhy">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>啊哈！算法 | 汇源果汁吖！</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="汇源果汁吖！" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">汇源果汁吖！</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一点小记录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">47</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hhy">
+      <meta itemprop="description" content="比昨天更好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汇源果汁吖！">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          啊哈！算法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-07 22:57:53 / 修改时间：23:15:27" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:53+08:00">2020-06-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BF%9B%E9%98%B6/" itemprop="url" rel="index"><span itemprop="name">进阶</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/" class="post-meta-item leancloud_visitors" data-flag-title="啊哈！算法" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我基础太差了。就从最简单，能看下去的这本书开始吧</p>
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><p>Code：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"><span class="built_in">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> a[<span class="number">11</span>],i,j,t;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">a[i]=<span class="number">0</span>; <span class="comment">//初始化为0</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++) <span class="comment">//循环读入5个数 &#123;</span></span><br><span class="line">  scanf(<span class="string">"%d"</span>,&amp;t); <span class="comment">//把每一个数读到变量t中</span></span><br><span class="line">  a[t]++; <span class="comment">//进行计数 &#125;</span></span><br><span class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">10</span>;i++) <span class="comment">//依次判断a[0]~a[10]</span></span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;  j&lt;=a[i];j++) <span class="comment">//出现了几次就打印几次</span></span><br><span class="line">      printf(<span class="string">"%d "</span>,i);</span><br><span class="line">      getchar();getchar(); <span class="comment">//这里的getchar();用来暂停程序，以便查看程序输出的内容 //也可以用system("pause");等来代替</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><blockquote>
+<p>冒泡排序的基本思想是:每次比较两个相邻的元素，如果它们的顺序错误就把它们交换 过来。</p>
+</blockquote>
+<p>Code:</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"><span class="built_in">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">int</span> a[<span class="number">100</span>],i,j,t,n;</span><br><span class="line">scanf(<span class="string">"%d"</span>,&amp;n); <span class="comment">//输入一个数n，表示接下来有n个数 for(i=1;i&lt;=n;i++) //循环读入n个数到数组a中</span></span><br><span class="line">        scanf(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        <span class="comment">//冒泡排序的核心部分</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n<span class="number">-1</span>;i++) <span class="comment">//n个数排序，只用进行n-1趟 &#123;</span></span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n-i;j++) <span class="comment">//从第1位开始比较直到最后一个尚未归位的数，想一想为什 么到n-i就可以了。</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(a[j]&lt;a[j+<span class="number">1</span>]) <span class="comment">//比较大小并交换</span></span><br><span class="line">&#123; t=a[j]; a[j]=a[j+<span class="number">1</span>]; a[j+<span class="number">1</span>]=t; &#125;</span><br><span class="line">&#125; &#125;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="comment">//输出结果 printf("%d ",a[i]);</span></span><br><span class="line">        getchar();getchar();</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>pic</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>Code:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">101</span>],n;<span class="comment">//定义全局变量，这两个变量需要在子函数中使用</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quicksort</span><span class="params">(<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,t,temp;</span><br><span class="line">    <span class="keyword">if</span>(left&gt;right)</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">temp=a[left]; <span class="comment">//temp中存的就是基准数 i=left;</span></span><br><span class="line">j=right;</span><br><span class="line"><span class="keyword">while</span>(i!=j)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//顺序很重要，要先从右往左找 while(a[j]&gt;=temp &amp;&amp; i&lt;j)</span></span><br><span class="line">j--; <span class="comment">//再从左往右找</span></span><br><span class="line">        <span class="keyword">while</span>(a[i]&lt;=temp &amp;&amp; i&lt;j)</span><br><span class="line">            i++;</span><br><span class="line"><span class="comment">//交换两个数在数组中的位置 if(i&lt;j)//当哨兵i和哨兵j没有相遇时 &#123;</span></span><br><span class="line">            t=a[i];</span><br><span class="line">            a[i]=a[j];</span><br><span class="line">            a[j]=t;</span><br><span class="line">&#125; &#125;</span><br><span class="line"><span class="comment">//最终将基准数归位</span></span><br><span class="line">a[left]=a[i];</span><br><span class="line">    a[i]=temp;</span><br><span class="line">quicksort(left,i<span class="number">-1</span>);<span class="comment">//继续处理左边的，这里是一个递归的过程</span></span><br><span class="line">quicksort(i+<span class="number">1</span>,right);<span class="comment">//继续处理右边的，这里是一个递归的过程 &#125;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> i,j,t; <span class="comment">//读入数据 scanf("%d",&amp;n); for(i=1;i&lt;=n;i++)</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]); quicksort(<span class="number">1</span>,n); <span class="comment">//快速排序调用</span></span><br><span class="line"><span class="comment">//输出排序后的结果 for(i=1;i&lt;=n;i++)</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">    getchar();getchar();</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>pic</p>
+<p><strong><em>我们来回顾一下本章三种排序算法的时间复杂度。桶排序是最快的，它的时间复杂度是 O(N+M);冒泡排序是 O(N 2);快速排序是 O(NlogN)。\</em></strong></p>
+<h1 id="栈、队列、链表"><a href="#栈、队列、链表" class="headerlink" title="栈、队列、链表"></a>栈、队列、链表</h1><h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><blockquote>
+<p>“先进先出”(First In First Out，FIFO)原则。</p>
+</blockquote>
+<p>队列将是我们今后学习广度优先搜索以及队列优化的 Bellman-Ford 最短路算法的核心 数据结构。所以现在将队列的三个基本元素(一个数组，两个变量)封装为一个结构体类型， 如下。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">queue</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">int</span> data[<span class="number">100</span>];<span class="comment">//队列的主体，用来存储内容 int head;//队首</span></span><br><span class="line"><span class="keyword">int</span> tail;<span class="comment">//队尾 &#125;;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">queue</span> <span class="title">q</span>;</span> <span class="keyword">int</span> i; <span class="comment">//初始化队列 q.head=1; q.tail=1; for(i=1;i&lt;=9;i++) &#123;</span></span><br><span class="line"><span class="comment">//依次向队列插入9个数 scanf("%d",&amp;q.data[q.tail]); q.tail++;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(q.head&lt;q.tail) <span class="comment">//当队列不为空的时候执行循环 &#123;</span></span><br><span class="line"><span class="comment">//打印队首并将队首出队 printf("%d ",q.data[q.head]); q.head++;</span></span><br><span class="line"><span class="comment">//先将新队首的数添加到队尾 q.data[q.tail]=q.data[q.head]; q.tail++;</span></span><br><span class="line"><span class="comment">//再将队首出队</span></span><br><span class="line">q.head++; &#125;</span><br><span class="line">    getchar();getchar();</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>入栈的操作 是 top++;s[top]=x(;假设需要入栈的字符暂存在字符变量 x 中)，其实可以简写为 s[++top]=x;</p>
+<p>判断回文：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a[<span class="number">101</span>],s[<span class="number">101</span>];</span><br><span class="line">    <span class="keyword">int</span> i,len,mid,next,top;</span><br><span class="line">gets(a); <span class="comment">//读入一行字符串 len=strlen(a); //求字符串的长度 mid=len/2-1; //求字符串的中点</span></span><br><span class="line">top=<span class="number">0</span>;<span class="comment">//栈的初始化 //将mid前的字符依次入栈 for(i=0;i&lt;=mid;i++)</span></span><br><span class="line">        s[++top]=a[i];</span><br><span class="line"><span class="comment">//判断字符串的长度是奇数还是偶数，并找出需要进行字符匹配的起始下标 if(len%2==0)</span></span><br><span class="line">        next=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">next=mid+<span class="number">2</span>;</span><br><span class="line"><span class="comment">//开始匹配 for(i=next;i&lt;=len-1;i++)</span></span><br><span class="line">&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]!=s[top])</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        top--;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果top的值为0，则说明栈内所有的字符都被一一匹配了 if(top==0)</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"YES"</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"NO"</span>);</span><br><span class="line">    getchar();getchar();</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="小猫钓鱼"><a href="#小猫钓鱼" class="headerlink" title="小猫钓鱼"></a>小猫钓鱼</h2><p>Code:</p>
+<figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#<span class="meta-keyword">include</span> &lt;stdio.h&gt;</span></span><br><span class="line">struct queue</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> <span class="title">data</span>[<span class="number">1000</span>];</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">head</span>;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">tail</span>;</span><br><span class="line">&#125;;</span><br><span class="line">struct stack</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> <span class="title">data</span>[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> top; &#125;;</span><br><span class="line"><span class="keyword">int</span> main() &#123;</span><br><span class="line">    struct queue q1,q2;</span><br><span class="line">    struct stack s;</span><br><span class="line">    <span class="keyword">int</span> book[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">int</span> i,t;</span><br><span class="line"><span class="comment">//初始化队列</span></span><br><span class="line">q1.<span class="built_in">head</span>=<span class="number">1</span>; q1.<span class="built_in">tail</span>=<span class="number">1</span>;</span><br><span class="line">q2.<span class="built_in">head</span>=<span class="number">1</span>; q2.<span class="built_in">tail</span>=<span class="number">1</span>;</span><br><span class="line"><span class="comment">//初始化栈</span></span><br><span class="line">s.top=<span class="number">0</span>; <span class="comment">//初始化用来标记的数组，用来标记哪些牌已经在桌上 for(i=1;i&lt;=9;i++)</span></span><br><span class="line">book[i]=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//依次向队列插入6个数 //小哼手上的6张牌 for(i=1;i&lt;=6;i++) &#123;</span></span><br><span class="line">        scanf(<span class="string">"%d"</span>,&amp;q1.<span class="title">data</span>[q1.<span class="built_in">tail</span>]);</span><br><span class="line">q1.<span class="built_in">tail</span>++; &#125;</span><br><span class="line"><span class="comment">//小哈手上的6张牌 for(i=1;i&lt;=6;i++) &#123;</span></span><br><span class="line">        scanf(<span class="string">"%d"</span>,&amp;q2.<span class="title">data</span>[q2.<span class="built_in">tail</span>]);</span><br><span class="line">q2.<span class="built_in">tail</span>++; &#125;</span><br><span class="line"><span class="keyword">while</span>(q1.<span class="built_in">head</span>&lt;q1.<span class="built_in">tail</span> &amp;&amp; q2.<span class="built_in">head</span>&lt;q2.<span class="built_in">tail</span> ) <span class="comment">//当队列不为空的时候执行循环 &#123;</span></span><br><span class="line">t=q1.<span class="title">data</span>[q1.<span class="built_in">head</span>];<span class="comment">//小哼出一张牌 //判断小哼当前打出的牌是否能赢牌 if(book[t]==0) //表明桌上没有牌面为t的牌</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//小哼此轮没有赢牌</span></span><br><span class="line">q1.<span class="built_in">head</span>++; <span class="comment">//小哼已经打出一张牌，所以要把打出的牌出队 s.top++;</span></span><br><span class="line">s.<span class="title">data</span>[s.top]=t; <span class="comment">//再把打出的牌放到桌上，即入栈 book[t]=1; //标记桌上现在已经有牌面为t的牌</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">//小哼此轮可以赢牌 q1.head++;//小哼已经打出一张牌，所以要把打出的牌出队 q1.data[q1.tail]=t;//紧接着把打出的牌放到手中牌的末尾 q1.tail++;</span></span><br><span class="line"><span class="keyword">while</span>(s.<span class="title">data</span>[s.top]!=t) <span class="comment">//把桌上可以赢得的牌依次放到手中牌的末尾 &#123;</span></span><br><span class="line">book[s.<span class="title">data</span>[s.top]]=<span class="number">0</span>;<span class="comment">//取消标记 q1.data[q1.tail]=s.data[s.top];//依次放入队尾 q1.tail++;</span></span><br><span class="line">s.top--; <span class="comment">//栈中少了一张牌，所以栈顶要减1</span></span><br><span class="line">&#125; &#125;</span><br><span class="line">t=q2.<span class="title">data</span>[q2.<span class="built_in">head</span>]; <span class="comment">//小哈出一张牌 //判断小哈当前打出的牌是否能赢牌 if(book[t]==0) //表明桌上没有牌面为t的牌 &#123;</span></span><br><span class="line"><span class="comment">//小哈此轮没有赢牌</span></span><br><span class="line">q2.<span class="built_in">head</span>++; <span class="comment">//小哈已经打出一张牌，所以要把打出的牌出队 s.top++;</span></span><br><span class="line">s.<span class="title">data</span>[s.top]=t; <span class="comment">//再把打出的牌放到桌上，即入栈 book[t]=1; //标记桌上现在已经有牌面为t的牌</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">//小哈此轮可以赢牌 q2.head++;//小哈已经打出一张牌，所以要把打出的牌出队 q2.data[q2.tail]=t;//紧接着把打出的牌放到手中牌的末尾 q2.tail++;</span></span><br><span class="line"><span class="keyword">while</span>(s.<span class="title">data</span>[s.top]!=t) <span class="comment">//把桌上可以赢得的牌依次放到手中牌的末尾 &#123;</span></span><br><span class="line">book[s.<span class="title">data</span>[s.top]]=<span class="number">0</span>;<span class="comment">//取消标记</span></span><br><span class="line">q2.<span class="title">data</span>[q2.<span class="built_in">tail</span>]=s.<span class="title">data</span>[s.top];<span class="comment">//依次放入队尾 q2.tail++;</span></span><br><span class="line">s.top--;</span><br><span class="line">&#125; &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(q2.<span class="built_in">head</span>==q2.<span class="built_in">tail</span>)</span><br><span class="line">&#123;</span><br><span class="line">printf(<span class="string">"小哼win\n"</span>); printf(<span class="string">"小哼当前手中的牌是"</span>); <span class="keyword">for</span>(i=q1.<span class="built_in">head</span>;i&lt;=q1.<span class="built_in">tail</span>-<span class="number">1</span>;i++)</span><br><span class="line">printf(<span class="string">" %d"</span>,q1.<span class="title">data</span>[i]); <span class="keyword">if</span>(s.top&gt;<span class="number">0</span>) <span class="comment">//如果桌上有牌则依次输出桌上的牌 &#123;</span></span><br><span class="line">printf(<span class="string">"\n桌上的牌是"</span>); <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=s.top;i++)</span><br><span class="line">printf(<span class="string">" %d"</span>,s.<span class="title">data</span>[i]); printf(<span class="string">"\n桌上已经没有牌了"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">printf(<span class="string">"小哈win\n"</span>); printf(<span class="string">"小哈当前手中的牌是"</span>); <span class="keyword">for</span>(i=q2.<span class="built_in">head</span>;i&lt;=q2.<span class="built_in">tail</span>-<span class="number">1</span>;i++)</span><br><span class="line">printf(<span class="string">" %d"</span>,q2.<span class="title">data</span>[i]); <span class="keyword">if</span>(s.top&gt;<span class="number">0</span>) <span class="comment">//如果桌上有牌则依次输出桌上的牌 &#123;</span></span><br><span class="line">printf(<span class="string">"\n桌上的牌是"</span>); <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=s.top;i++)</span><br><span class="line">printf(<span class="string">" %d"</span>,s.<span class="title">data</span>[i]); printf(<span class="string">"\n桌上已经没有牌了"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span></span><br><span class="line">&#125;</span><br><span class="line">    getchar();getchar();</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p>Code：下面来设置头指针并设置新创建结点的*next 指向空</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; //这里创建一个结构体用来表示链表的结点类型 struct node</span></span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">head</span>,*<span class="title">p</span>,*<span class="title">q</span>,*<span class="title">t</span>;</span> <span class="keyword">int</span> i,n,a;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">head = <span class="literal">NULL</span>;<span class="comment">//头指针初始为空 for(i=1;i&lt;=n;i++)//循环读入n个数 &#123;</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a); <span class="comment">//动态申请一个空间，用来存放一个结点，并用临时指针p指向这个结点</span></span><br><span class="line">p=(struct node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct node)); p-&gt;data=a;<span class="comment">//将数据存储到当前结点的data域中 p-&gt;next=NULL;//设置当前结点的后继指针指向空，也就是当前结点的下一个结点为空 if(head==NULL)</span></span><br><span class="line">head=p;<span class="comment">//如果这是第一个创建的结点，则将头指针指向这个结点 else</span></span><br><span class="line">q-&gt;next=p;<span class="comment">//如果不是第一个创建的结点，则将上一个结点的后继指针指向当前结点 q=p;//指针q也指向当前结点</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出链表中的所有数 t=head; while(t!=NULL)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d "</span>,t-&gt;data);</span><br><span class="line">t=t-&gt;next;<span class="comment">//继续下一个结点 &#125;</span></span><br><span class="line">    getchar();getchar();</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Code:插入</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"><span class="comment">//这里创建一个结构体用来表示链表的结点类型 struct node</span></span><br><span class="line">&#123;</span><br><span class="line">int <span class="keyword">data</span>;</span><br><span class="line">struct node *next;</span><br><span class="line">&#125;;</span><br><span class="line">int main() &#123;</span><br><span class="line">struct node *head,*p,*q,_t; int i,n,a;</span><br><span class="line">scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">head = NULL;<span class="comment">//头指针初始为空 for(i=1;i&lt;=n;i++)//循环读入 n 个数 &#123;</span></span><br><span class="line">scanf(<span class="string">"%d"</span>,&amp;a); <span class="comment">//动态申请一个空间，用来存放一个结点，并用临时指针 p 指向这个结点</span></span><br><span class="line"><span class="function"><span class="title">p</span>=(struct node _)malloc(sizeof(struct node)); p-&gt;</span><span class="function"><span class="title">data</span>=a;//将数据存储到当前结点的 <span class="keyword">data</span> 域中 p-&gt;</span>next=NULL;<span class="comment">//设置当前结点的后继指针指向空，也就是当前结点的下一个结点为空 if(head==NULL)</span></span><br><span class="line">head=p;<span class="comment">//如果这是第一个创建的结点，则将头指针指向这个结点 else</span></span><br><span class="line"><span class="function"><span class="title">q</span>-&gt;</span>next=p;<span class="comment">//如果不是第一个创建的结点，则将上一个结点的后继指针指向当前结点</span></span><br><span class="line">q=p;<span class="comment">//指针 q 也指向当前结点</span></span><br><span class="line">&#125;</span><br><span class="line">scanf(<span class="string">"%d"</span>,&amp;a);<span class="comment">//读入待插入的数 t=head;//从链表头部开始遍历 while(t!=NULL)//当没有到达链表尾部的时候循环 &#123;</span></span><br><span class="line"><span class="function"><span class="title">if</span>(t-&gt;</span><span class="function"><span class="title">next</span>-&gt;</span><span class="keyword">data</span> &gt; a)<span class="comment">//如果当前结点下一个结点的值大于待插入数，将数插入到中间 &#123;</span></span><br><span class="line">用来存放新增结点</span><br><span class="line">p=(struct node \*)malloc(sizeof(struct node));<span class="comment">//动态申请一个空间，</span></span><br><span class="line"><span class="function"><span class="title">p</span>-&gt;</span><span class="function"><span class="title">data</span>=a; p-&gt;</span><span class="function"><span class="title">next</span>=t-&gt;</span>next;<span class="comment">//新增结点的后继指针指向当前结点的后继指针所指向的结点</span></span><br><span class="line"><span class="function"><span class="title">t</span>-&gt;</span>next=p;<span class="comment">//当前结点的后继指针指向新增结点</span></span><br><span class="line">break;<span class="comment">//插入完毕退出循环 &#125;</span></span><br><span class="line"><span class="function"><span class="title">t</span>=t-&gt;</span>next;<span class="comment">//继续下一个结点 &#125;</span></span><br><span class="line"><span class="comment">//输出链表中的所有数 t=head; while(t!=NULL)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="function"><span class="title">printf</span>("%d ",t-&gt;</span><span class="keyword">data</span>);</span><br><span class="line"><span class="function"><span class="title">t</span>=t-&gt;</span>next;<span class="comment">//继续下一个结点 &#125;</span></span><br><span class="line">getchar();getchar();</span><br><span class="line">return <span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="模拟链表"><a href="#模拟链表" class="headerlink" title="模拟链表"></a>模拟链表</h2><p>Code：</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"><span class="built_in">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> data[<span class="number">101</span>],<span class="built_in">right</span>[<span class="number">101</span>];</span><br><span class="line"><span class="built_in">int</span> i,<span class="built_in">n</span>,<span class="built_in">t</span>,<span class="built_in">len</span>; //读入已有的数 scanf(<span class="string">"%d"</span>,&amp;<span class="built_in">n</span>); for(i=<span class="number">1</span>;i&lt;=<span class="built_in">n</span>;i++)</span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;data[i]);</span><br><span class="line"><span class="built_in">len</span>=<span class="built_in">n</span>;</span><br><span class="line">//初始化数组<span class="built_in">right</span> for(i=<span class="number">1</span>;i&lt;=<span class="built_in">n</span>;i++) &#123;</span><br><span class="line">    <span class="built_in">if</span>(i!=<span class="built_in">n</span>)</span><br><span class="line">        <span class="built_in">right</span>[i]=i+<span class="number">1</span>;</span><br><span class="line">    else</span><br><span class="line">        <span class="built_in">right</span>[i]=<span class="number">0</span>;</span><br><span class="line">&#125; //直接在数组data的末尾增加一个数 <span class="built_in">len</span>++; scanf(<span class="string">"%d"</span>,&amp;data[<span class="built_in">len</span>]);</span><br><span class="line">//从链表的头部开始遍历 <span class="built_in">t</span>=<span class="number">1</span>;</span><br><span class="line">while(<span class="built_in">t</span>!=<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">if</span>(data[<span class="built_in">right</span>[<span class="built_in">t</span>]]&gt;data[<span class="built_in">len</span>])//如果当前结点下一个结点的值大于待插入数，将 &#123;</span><br><span class="line"><span class="built_in">right</span>[<span class="built_in">len</span>]=<span class="built_in">right</span>[<span class="built_in">t</span>];//新插入数的下一个结点标号等于当前结点的下一个结</span><br><span class="line"><span class="built_in">right</span>[<span class="built_in">t</span>]=<span class="built_in">len</span>;//当前结点的下一个结点编号就是新插入数的编号</span><br><span class="line">break;//插入完成跳出循环 &#125;</span><br><span class="line">    <span class="built_in">t</span>=<span class="built_in">right</span>[<span class="built_in">t</span>];</span><br><span class="line">&#125;</span><br><span class="line">//输出链表中所有的数 <span class="built_in">t</span>=<span class="number">1</span>;</span><br><span class="line">while(<span class="built_in">t</span>!=<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    printf(<span class="string">"%d "</span>,data[<span class="built_in">t</span>]);</span><br><span class="line">    <span class="built_in">t</span>=<span class="built_in">right</span>[<span class="built_in">t</span>];</span><br><span class="line">&#125;</span><br><span class="line">getchar();</span><br><span class="line">    getchar();</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><h2 id="计算-xxx-xxx-xxx，x-1-9-："><a href="#计算-xxx-xxx-xxx，x-1-9-：" class="headerlink" title="计算 xxx+xxx=xxx，x=[1-9]："></a>计算 xxx+xxx=xxx，x=[1-9]：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="炸弹人"><a href="#炸弹人" class="headerlink" title="炸弹人"></a>炸弹人</h2><h2 id="火柴棍等式"><a href="#火柴棍等式" class="headerlink" title="火柴棍等式"></a>火柴棍等式</h2><h2 id="数的全排列"><a href="#数的全排列" class="headerlink" title="数的全排列"></a>数的全排列</h2><h1 id="万能的搜索"><a href="#万能的搜索" class="headerlink" title="万能的搜索"></a>万能的搜索</h1><h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><p>Code：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> <span class="built_in">step</span>)</span></span>&#123;</span><br><span class="line">  判断边界</span><br><span class="line">  尝试每一种可能<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++&gt;)&#123;</span><br><span class="line">    继续下一步dfs(<span class="built_in">step</span>+<span class="number">1</span>])</span><br><span class="line">  &#125;</span><br><span class="line">  返回</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="迷宫"><a href="#迷宫" class="headerlink" title="迷宫"></a>迷宫</h2><h2 id="广度优先排序"><a href="#广度优先排序" class="headerlink" title="广度优先排序"></a>广度优先排序</h2><p>层层递进</p>
+<p>用队列存储已经走过的点</p>
+<h2 id="解决炸弹人问题"><a href="#解决炸弹人问题" class="headerlink" title="解决炸弹人问题"></a>解决炸弹人问题</h2><p>炸弹人会出现在无法到达的地点以至于结果错误。<br>利用广度优先枚举出炸弹人可以到达的地方<br>也可以使用深度优先</p>
+<h2 id="宝岛探险"><a href="#宝岛探险" class="headerlink" title="宝岛探险"></a>宝岛探险</h2><p>Floodfill 漫水填充法</p>
+<h2 id="水管工游戏"><a href="#水管工游戏" class="headerlink" title="水管工游戏"></a>水管工游戏</h2><h1 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h1><p>时间戳：顶点被访问的顺序</p>
+<h2 id="深度与广度优先究竟是啥"><a href="#深度与广度优先究竟是啥" class="headerlink" title="深度与广度优先究竟是啥"></a>深度与广度优先究竟是啥</h2><p>深度遍历主要思想：<br>以一个未被访问过的顶点作为起始顶点，<br>沿当前顶点的边走到未被访问过的顶点，<br>当没有未被访问过的顶点时，则返回上一个顶点，<br>继续试探访问别的顶点，直到所有顶点都被访问过。</p>
+<p>广度遍历主要思想：<br>以一个未被访问过的顶点作为起始顶点，<br>访问其所有相邻的顶点，然后对每个相邻的顶点，<br>再访问他们相邻的所有未被访问过的顶点，直到所有顶点都被访问</p>
+<h2 id="城市地图-图的优先遍历"><a href="#城市地图-图的优先遍历" class="headerlink" title="城市地图-图的优先遍历"></a>城市地图-图的优先遍历</h2><p>存图方法</p>
+<ul>
+<li>图的邻接矩阵表示法 – 二维数组</li>
+<li>邻接表</li>
+</ul>
+<h2 id="最少转机-图的广度优先遍历"><a href="#最少转机-图的广度优先遍历" class="headerlink" title="最少转机-图的广度优先遍历"></a>最少转机-图的广度优先遍历</h2><p>队列</p>
+<h1 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h1><h2 id="只有五行的算法-Floyd-Warshall"><a href="#只有五行的算法-Floyd-Warshall" class="headerlink" title="只有五行的算法-Floyd-Warshall"></a>只有五行的算法-Floyd-Warshall</h2><p>不能解决‘负权回路’的图</p>
+<h2 id="Dijksstr-算法-通过边实现松弛"><a href="#Dijksstr-算法-通过边实现松弛" class="headerlink" title="Dijksstr 算法-通过边实现松弛"></a>Dijksstr 算法-通过边实现松弛</h2><p>单源最短路径</p>
+<p>基本思想：<br>每次找到离源点最近的一个顶点，然后以该顶点为中心进行扩展，最终得到源点到其余所有顶点的最短路径</p>
+<p>边数 M &lt; 顶点数 N^2 –&gt;稀疏图 –&gt;可用邻接表<br>边数 M &gt; 顶点数 N^2 –&gt;稠密图</p>
+<h2 id="Bellman-Ford-解决负权边"><a href="#Bellman-Ford-解决负权边" class="headerlink" title="Bellman-Ford 解决负权边"></a>Bellman-Ford 解决负权边</h2><h2 id="Bellman-Ford-队列优化"><a href="#Bellman-Ford-队列优化" class="headerlink" title="Bellman-Ford 队列优化"></a>Bellman-Ford 队列优化</h2><p>在每实施一次松弛操作后，就会有一些顶点已经求得其最短路径，但每次还要判断是否需要松弛，浪费了时间。</p>
+<p>==</p>
+<p>每次仅对最短路估计值发生变化了的顶点的所有出边执行松弛操作。</p>
+<p>使用队列优化的 bellman Ford 算法的关键之处在于，只有那些在<strong><em>前一遍松弛中改变了最短路程估计值的顶点\</em></strong>才可能引起他们连接点最短路程估计值发生改变。</p>
+<h1 id="神奇的树"><a href="#神奇的树" class="headerlink" title="神奇的树"></a>神奇的树</h1><h2 id="开启树之旅"><a href="#开启树之旅" class="headerlink" title="开启树之旅"></a>开启树之旅</h2><p>树其实是不包含回路的连通无向图。指任意两个节点中有且只有一条路径的无向图。</p>
+<p>特性：</p>
+<ol>
+<li>一棵树中的任意两个结点有且仅有唯一的一条路径连通</li>
+<li>一棵树如果有 n 个节点，那么它一定恰好有 n-1 条边。</li>
+<li>在一棵树中加一条边将会构成一个回路。</li>
+</ol>
+<p>根又叫根结点，一棵树有且只有一个根结点。根结点有时候也称为祖先。如果一个节点没有子节点，那么这个节点称为叶节点。没有父节点的节点称为根节点。如果一个节点既不是根节点，也不是叶节点，则称为内部节点。<strong>深度</strong>是指从根到这个节点的层数（根为第 1 层）。</p>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>二叉树是一种特殊的树，二叉树的特点是每个节点最多有两个儿子，左边的叫左儿子，右边的叫右儿子，或者说每个节点最多有两颗子树，更加严格的递归定义是二叉树要么为空，要么由根节点，左子树和右子树组成，而左子树和右子树分别是一棵二叉树。</p>
+<p>二叉树中还有两种特殊的二叉树，叫做满二叉树和完全二叉树。</p>
+<ul>
+<li><p>如果二叉树中每个内部节点都有两个儿子，这样的二叉树叫做满二叉树。满二叉树，所有的叶节点都有同样的深度。</p>
+<p>满二叉树的严格的定义是一颗深度为 h 且有 2 的 h 次方减一个节点的二叉树。</p>
+</li>
+<li><p>如果一棵二叉树除了最右边位置上有一个或几个叶节点缺少外，其他是丰满的，那么这样的二叉树就是完全二叉树。</p>
+<p>严格的定义是，若设二叉树的高度为 h，除除 h 层外其他各层的节点数都达到最大个数，第 h 层从右往左连续缺若干个节点。则这个二叉树就是完全二叉树。</p>
+</li>
+</ul>
+<p>如果完全二叉树的一个父节点编号为 k，那么他做儿子的编号就是 2k，右儿子的编号就是 2k+1。<br>如果已知儿子（左儿子或右儿子）的编号是 x，那么它父节点的编号就是 x/2。<br>如果一颗完全二叉树有 n 个节点，那么这个完全凹凸处的高度为 log2 n，简写为 log n。即最多有 logo n 层节点。</p>
+<p>完全二叉树的最典型应用就是堆。</p>
+<h2 id="堆-神奇的优先队列"><a href="#堆-神奇的优先队列" class="headerlink" title="堆-神奇的优先队列"></a>堆-神奇的优先队列</h2><p>堆是一种特殊的完全二叉树，如果所有父节点都比子节点小，我们称为最小堆，如果所有父节点都比子节点大，这样的完全二叉树称为最大堆。</p>
+<h2 id="擒贼先擒王-并查集"><a href="#擒贼先擒王-并查集" class="headerlink" title="擒贼先擒王-并查集"></a>擒贼先擒王-并查集</h2><p>并查集也称为不相交集数据结构。</p>
+<h1 id="更多精彩算法"><a href="#更多精彩算法" class="headerlink" title="更多精彩算法"></a>更多精彩算法</h1><h2 id="镖局运镖-图的最小生成树"><a href="#镖局运镖-图的最小生成树" class="headerlink" title="镖局运镖-图的最小生成树"></a>镖局运镖-图的最小生成树</h2><p>要想让有 n 个顶点的图联通，那么至少需要 n-1 条边。</p>
+<p>先选择最短的边，然后选择次短的边，直到选择了 n-1 条边为止。</p>
+<h2 id="再谈最小生成树"><a href="#再谈最小生成树" class="headerlink" title="再谈最小生成树"></a>再谈最小生成树</h2><p>将图中所有的顶点分为两类树顶点（已被选入生成树的顶点）和非速顶点（还未被选入生成树的顶点），首先选择任意一个顶点加入生成树，你可以理解为生成树的根，接下来要找出一条边添加到生成树，这需要枚举每一个树顶点到每一个非树顶点所有的边，然后找到最短边加入到生成树，照此方法重复操作 n-1 次，直到将所有的顶点都加入生成树中。</p>
+<h2 id="重要城市-图的割点"><a href="#重要城市-图的割点" class="headerlink" title="重要城市-图的割点"></a>重要城市-图的割点</h2><p>在一个无向连通图中，如果删除某个顶点后图不再连通（即任意 2 点之间不能相互到达），我们称这样的顶点为割点/割顶</p>
+<h2 id="关键道路-图的割边"><a href="#关键道路-图的割边" class="headerlink" title="关键道路-图的割边"></a>关键道路-图的割边</h2><p>割边也成为桥，即在一个无向连通图中，如果删除某条边后图不再连通。</p>
+<h2 id="二分图最大匹配"><a href="#二分图最大匹配" class="headerlink" title="二分图最大匹配"></a>二分图最大匹配</h2><p>二分图的定义：如果一个图的所有顶点可以被分为 x 和 y 两个集合，并且所有边的两个顶点恰好一个属于集合 x，另一个属于集合 y，即每个集合内的顶点没有边相连，那么此图就是二分图。</p>
+<p>判断一个图是否为二分图也非常简单，首先将任意一个顶点着红色，然后将其相邻的顶点着蓝色，如果按照这样的着色方法，可以将全部顶点着色的话，并且相邻的顶点着色不同，那么该图就是二分图。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Donate comment here.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    赞赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="hhy 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="hhy 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>hhy
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/" title="啊哈！算法">http://yoursite.com/2020/06/07/啊哈！算法 /</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/channel_name">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/07/elasticsearch%E4%BD%BF%E7%94%A8/" rel="prev" title="2020-05-11   graduation问题">
+      <i class="fa fa-chevron-left"></i> 2020-05-11   graduation问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/07/%3C%3C,%3E%3E,%3E%3E%3E/" rel="next" title="Java中的<< 和 >> 和 >>> 详细分析">
+      Java中的<< 和 >> 和 >>> 详细分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排序"><span class="nav-number">2.</span> <span class="nav-text">排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#桶排序"><span class="nav-number">2.1.</span> <span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">2.2.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序"><span class="nav-number">2.3.</span> <span class="nav-text">快速排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈、队列、链表"><span class="nav-number">3.</span> <span class="nav-text">栈、队列、链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#队列"><span class="nav-number">3.1.</span> <span class="nav-text">队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈"><span class="nav-number">3.2.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小猫钓鱼"><span class="nav-number">3.3.</span> <span class="nav-text">小猫钓鱼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表"><span class="nav-number">3.4.</span> <span class="nav-text">链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟链表"><span class="nav-number">3.5.</span> <span class="nav-text">模拟链表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举"><span class="nav-number">4.</span> <span class="nav-text">枚举</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算-xxx-xxx-xxx，x-1-9-："><span class="nav-number">4.1.</span> <span class="nav-text">计算 xxx+xxx&#x3D;xxx，x&#x3D;[1-9]：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#炸弹人"><span class="nav-number">4.2.</span> <span class="nav-text">炸弹人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#火柴棍等式"><span class="nav-number">4.3.</span> <span class="nav-text">火柴棍等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数的全排列"><span class="nav-number">4.4.</span> <span class="nav-text">数的全排列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#万能的搜索"><span class="nav-number">5.</span> <span class="nav-text">万能的搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#深度优先搜索"><span class="nav-number">5.1.</span> <span class="nav-text">深度优先搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迷宫"><span class="nav-number">5.2.</span> <span class="nav-text">迷宫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广度优先排序"><span class="nav-number">5.3.</span> <span class="nav-text">广度优先排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决炸弹人问题"><span class="nav-number">5.4.</span> <span class="nav-text">解决炸弹人问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宝岛探险"><span class="nav-number">5.5.</span> <span class="nav-text">宝岛探险</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#水管工游戏"><span class="nav-number">5.6.</span> <span class="nav-text">水管工游戏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图的遍历"><span class="nav-number">6.</span> <span class="nav-text">图的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#深度与广度优先究竟是啥"><span class="nav-number">6.1.</span> <span class="nav-text">深度与广度优先究竟是啥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#城市地图-图的优先遍历"><span class="nav-number">6.2.</span> <span class="nav-text">城市地图-图的优先遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最少转机-图的广度优先遍历"><span class="nav-number">6.3.</span> <span class="nav-text">最少转机-图的广度优先遍历</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最短路径"><span class="nav-number">7.</span> <span class="nav-text">最短路径</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#只有五行的算法-Floyd-Warshall"><span class="nav-number">7.1.</span> <span class="nav-text">只有五行的算法-Floyd-Warshall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dijksstr-算法-通过边实现松弛"><span class="nav-number">7.2.</span> <span class="nav-text">Dijksstr 算法-通过边实现松弛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bellman-Ford-解决负权边"><span class="nav-number">7.3.</span> <span class="nav-text">Bellman-Ford 解决负权边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bellman-Ford-队列优化"><span class="nav-number">7.4.</span> <span class="nav-text">Bellman-Ford 队列优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#神奇的树"><span class="nav-number">8.</span> <span class="nav-text">神奇的树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开启树之旅"><span class="nav-number">8.1.</span> <span class="nav-text">开启树之旅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树"><span class="nav-number">8.2.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆-神奇的优先队列"><span class="nav-number">8.3.</span> <span class="nav-text">堆-神奇的优先队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#擒贼先擒王-并查集"><span class="nav-number">8.4.</span> <span class="nav-text">擒贼先擒王-并查集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多精彩算法"><span class="nav-number">9.</span> <span class="nav-text">更多精彩算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#镖局运镖-图的最小生成树"><span class="nav-number">9.1.</span> <span class="nav-text">镖局运镖-图的最小生成树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再谈最小生成树"><span class="nav-number">9.2.</span> <span class="nav-text">再谈最小生成树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要城市-图的割点"><span class="nav-number">9.3.</span> <span class="nav-text">重要城市-图的割点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键道路-图的割边"><span class="nav-number">9.4.</span> <span class="nav-text">关键道路-图的割边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分图最大匹配"><span class="nav-number">9.5.</span> <span class="nav-text">二分图最大匹配</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">hhy</p>
+  <div class="site-description" itemprop="description">比昨天更好</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/han1997" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;han1997" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hanhuiyuan1997@gmail.com" title="E-Mail → mailto:hanhuiyuan1997@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">hhy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">75k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:08</span>
+</div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":null,"app_key":null,"server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"aEAw8zbFeOeNJP1ORD8jRl74-gzGzoHsz","appKey":"77aRXFHBdmYYXerB05Wqjxe6","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":"zh-Hans","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
