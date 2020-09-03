@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">47</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">51</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -280,7 +280,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -303,22 +303,22 @@
 <a id="more"></a>
 <p>在使用 brew install 安装软件的过程中，经常会遇到安装缓慢、卡死的情况，这大多是由于 Homebrew 的默认安装源位于国外，国内访问速度慢造成的，解决这个问题的方法是将安装源替换为国内镜像，常用的国内镜像包括：阿里巴巴开源镜像、中科大镜像、清华镜像等。</p>
 <p>本文的编写目的是简单的介绍四个常用的源（源），以及如何更换为国内镜像实现快速安装软件。</p>
-<p>2、brew<br>说明：Homebrew 源代码仓库。<br>默认地址：<a href="https://github.com/Homebrew/brew.git" target="_blank" rel="noopener">https://github.com/Homebrew/brew.git</a></p>
-<p>3、homebrew-core<br>说明：Homebrew 核心源（仓库），它是 brew install 的默认安装源（仓库）。<br>默认地址：<a href="https://github.com/Homebrew/homebrew-core.git" target="_blank" rel="noopener">https://github.com/Homebrew/homebrew-core.git</a></p>
+<p>2、brew<br>说明：Homebrew 源代码仓库。<br>默认地址：<a target="_blank" rel="noopener" href="https://github.com/Homebrew/brew.git">https://github.com/Homebrew/brew.git</a></p>
+<p>3、homebrew-core<br>说明：Homebrew 核心源（仓库），它是 brew install 的默认安装源（仓库）。<br>默认地址：<a target="_blank" rel="noopener" href="https://github.com/Homebrew/homebrew-core.git">https://github.com/Homebrew/homebrew-core.git</a></p>
 <p>4、homebrew-cask<br>说明：homebrew-cask 源（仓库），提供 macOS 应用和大型二进制文件的安装。通常我们在 mac 操作系统上安装图形用户界面软件，系统都会提示“若要安装，请拖动此图标…”。homebrew-cask 扩展了Homebrew，为安装和管理 Atom 和 Google Chrome 之类的图形用户界面应用程序带来了优雅、简单和速度。</p>
-<p>默认地址：<a href="https://github.com/Homebrew/homebrew-cask.git" target="_blank" rel="noopener">https://github.com/Homebrew/homebrew-cask.git</a></p>
-<p>5、homebrew-bottles<br>说明：Homebrew 预编译二进制软件包。<br>默认地址：<a href="https://bintray.com/homebrew/bottles" target="_blank" rel="noopener">https://bintray.com/homebrew/bottles</a></p>
+<p>默认地址：<a target="_blank" rel="noopener" href="https://github.com/Homebrew/homebrew-cask.git">https://github.com/Homebrew/homebrew-cask.git</a></p>
+<p>5、homebrew-bottles<br>说明：Homebrew 预编译二进制软件包。<br>默认地址：<a target="_blank" rel="noopener" href="https://bintray.com/homebrew/bottles">https://bintray.com/homebrew/bottles</a></p>
 <p>6、替换为国内镜像源<br>我的习惯是创建 change_brew.sh 文件，然后在文件中写入替换源需要的命令。以替换为中科大镜像为例，在 change_brew.sh 文件中写入如下内容，并执行该脚本，就可以成功切换镜像源。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换brew.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/brew.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-core.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-cask.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用生效</span></span><br><span class="line">brew update</span><br><span class="line"><span class="comment"># 替换homebrew-bottles:</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles'</span> &gt;&gt; ~/.bash_profile</span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换brew.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/brew.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-core.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-cask.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask&quot;</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用生效</span></span><br><span class="line">brew update</span><br><span class="line"><span class="comment"># 替换homebrew-bottles:</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#x27;</span> &gt;&gt; ~/.bash_profile</span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
 
 <p>通过<code>brew config</code> 命令查看配置信息：</p>
 <p>7、还原默认镜像源<br>创建 restore_brew.sh 文件，写入如下内容，执行该文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换brew.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/brew.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-core.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/homebrew-core.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-cask.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/homebrew-cask.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用生效</span></span><br><span class="line">brew update</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换brew.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>&quot;</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/brew.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-core.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core&quot;</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/homebrew-core.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 替换homebrew-cask.git:</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">&quot;<span class="subst">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-cask&quot;</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/homebrew-cask.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用生效</span></span><br><span class="line">brew update</span><br></pre></td></tr></table></figure>
 
-<p>执行完 restore_brew.sh 文件后，将 ~/.bash_profile 文件中的 HOMEBREW_BOTTLE_DOMAIN=<a href="https://mirrors.ustc.edu.cn/homebrew-bottles&#39;" target="_blank" rel="noopener">https://mirrors.ustc.edu.cn/homebrew-bottles&#39;</a> 内容删除，并执行 source ~/.bash_profile，就恢复了默认的镜像。</p>
+<p>执行完 restore_brew.sh 文件后，将 ~/.bash_profile 文件中的 HOMEBREW_BOTTLE_DOMAIN=<a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/homebrew-bottles&#39;">https://mirrors.ustc.edu.cn/homebrew-bottles&#39;</a> 内容删除，并执行 source ~/.bash_profile，就恢复了默认的镜像。</p>
 <p>8、常见的国内镜像<br>阿里巴巴开源镜像<br>清华镜像<br>中科大镜像</p>
 <p>9、参考资料<br>homebrew github<br>brew github<br>homebrew-core github<br>homebrew-cask github<br>homebrew-bottles<br>Homebrew 的关键词定义</p>
-<p>文章内容仅代表个人观点，如有不正之处，欢迎批评指正，谢谢大家。<br>————————————————<br>版权声明：本文为CSDN博主「志波同学」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/claram/java/article/details/101577547" target="_blank" rel="noopener">https://blog.csdn.net/claram/java/article/details/101577547</a></p>
+<p>文章内容仅代表个人观点，如有不正之处，欢迎批评指正，谢谢大家。<br>————————————————<br>版权声明：本文为CSDN博主「志波同学」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/claram/java/article/details/101577547">https://blog.csdn.net/claram/java/article/details/101577547</a></p>
 
     </div>
 
@@ -496,7 +496,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -543,12 +543,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">85k</span>
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:19</span>
 </div>
 
         

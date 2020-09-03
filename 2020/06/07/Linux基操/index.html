@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -127,7 +127,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">47</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">51</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -332,12 +332,12 @@
 <p>sudo firewall-cmd –zone=public –add-port=8080/tcp –permanent</p>
 <p>sudo firewall-cmd –reload </p>
 <p>sudo firewall-cmd –list-ports</p>
-<p><a href="https://blog.csdn.net/asahinokawa/article/details/82285390" target="_blank" rel="noopener">参考链接</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/asahinokawa/article/details/82285390">参考链接</a></p>
 </blockquote>
 <h3 id="设置自启动"><a href="#设置自启动" class="headerlink" title="设置自启动"></a>设置自启动</h3><ol>
 <li>脚本</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"> vi /etc/init.d/zookeeper</span><br><span class="line"><span class="meta"> #</span><span class="bash"> bash脚本</span></span><br><span class="line"> </span><br><span class="line"><span class="meta"> #</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">chkconfig:2345 20 90</span></span><br><span class="line"><span class="meta">#</span><span class="bash">description:zookeeper</span></span><br><span class="line"><span class="meta">#</span><span class="bash">processname:zookeeper</span></span><br><span class="line">ZK_PATH=/opt/zookeeper</span><br><span class="line">export JAVA_HOME=/opt/jdk1.8.0_152</span><br><span class="line">case $1 in</span><br><span class="line">         start) sh  $ZK_PATH/bin/zkServer.sh start;;</span><br><span class="line">         stop)  sh  $ZK_PATH/bin/zkServer.sh stop;;</span><br><span class="line">         status) sh  $ZK_PATH/bin/zkServer.sh status;;</span><br><span class="line">         restart) sh $ZK_PATH/bin/zkServer.sh restart;;</span><br><span class="line">         *)  echo "require start|stop|status|restart"  ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"> vi /etc/init.d/zookeeper</span><br><span class="line"><span class="meta"> #</span><span class="bash"> bash脚本</span></span><br><span class="line"> </span><br><span class="line"><span class="meta"> #</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">chkconfig:2345 20 90</span></span><br><span class="line"><span class="meta">#</span><span class="bash">description:zookeeper</span></span><br><span class="line"><span class="meta">#</span><span class="bash">processname:zookeeper</span></span><br><span class="line">ZK_PATH=/opt/zookeeper</span><br><span class="line">export JAVA_HOME=/opt/jdk1.8.0_152</span><br><span class="line">case $1 in</span><br><span class="line">         start) sh  $ZK_PATH/bin/zkServer.sh start;;</span><br><span class="line">         stop)  sh  $ZK_PATH/bin/zkServer.sh stop;;</span><br><span class="line">         status) sh  $ZK_PATH/bin/zkServer.sh status;;</span><br><span class="line">         restart) sh $ZK_PATH/bin/zkServer.sh restart;;</span><br><span class="line">         *)  echo &quot;require start|stop|status|restart&quot;  ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>添加服务</li>
@@ -573,7 +573,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装软件"><span class="nav-number">1.1.</span> <span class="nav-text">安装软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jdk"><span class="nav-number">1.1.1.</span> <span class="nav-text">jdk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat"><span class="nav-number">1.1.2.</span> <span class="nav-text">tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dubbo-javaweb"><span class="nav-number">1.1.3.</span> <span class="nav-text">dubbo-javaweb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zookeeper"><span class="nav-number">1.1.4.</span> <span class="nav-text">zookeeper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置自启动"><span class="nav-number">1.1.5.</span> <span class="nav-text">设置自启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fastdfs-？？？"><span class="nav-number">1.1.6.</span> <span class="nav-text">fastdfs ？？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx可以了解一下？？？？"><span class="nav-number">1.1.7.</span> <span class="nav-text">nginx可以了解一下？？？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elastissearch"><span class="nav-number">1.1.8.</span> <span class="nav-text">elastissearch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.1.8.1.</span> <span class="nav-text">简介</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kibana"><span class="nav-number">1.1.9.</span> <span class="nav-text">kibana</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">安装软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jdk"><span class="nav-number">1.1.1.</span> <span class="nav-text">jdk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat"><span class="nav-number">1.1.2.</span> <span class="nav-text">tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dubbo-javaweb"><span class="nav-number">1.1.3.</span> <span class="nav-text">dubbo-javaweb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zookeeper"><span class="nav-number">1.1.4.</span> <span class="nav-text">zookeeper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="nav-number">1.1.5.</span> <span class="nav-text">设置自启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fastdfs-%EF%BC%9F%EF%BC%9F%EF%BC%9F"><span class="nav-number">1.1.6.</span> <span class="nav-text">fastdfs ？？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx%E5%8F%AF%E4%BB%A5%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%8B%EF%BC%9F%EF%BC%9F%EF%BC%9F%EF%BC%9F"><span class="nav-number">1.1.7.</span> <span class="nav-text">nginx可以了解一下？？？？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elastissearch"><span class="nav-number">1.1.8.</span> <span class="nav-text">elastissearch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.8.1.</span> <span class="nav-text">简介</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kibana"><span class="nav-number">1.1.9.</span> <span class="nav-text">kibana</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -600,7 +600,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -647,12 +647,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">85k</span>
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:19</span>
 </div>
 
         

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -127,7 +127,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">47</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">51</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -322,7 +322,7 @@
 <li><p>什么情况下需要重写hashcode(),equals()</p>
 </li>
 <li><p>通用mapper数据插入数据库后获取id</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Table</span>(name = <span class="string">"$&#123;tablename&#125;"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXXEntity</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">	<span class="meta">@Id</span></span><br><span class="line">	<span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY)</span><br><span class="line">	<span class="keyword">private</span> Long id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Table(name = &quot;$&#123;tablename&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXXEntity</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">	<span class="meta">@Id</span></span><br><span class="line">	<span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span></span><br><span class="line">	<span class="keyword">private</span> Long id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>主键返回策略只作用于dao层，无法跨越RPC</p>
 </li>
@@ -347,11 +347,11 @@
 <p>注意：JSON数据里面不要有\  专一字符  会导致json数据转化失败</p>
 <p>可以拿到后台转化之后的数据用json在线转化工具来测试是否转换成功</p>
 <p>在线JSON校验格式地址如下</p>
-<p><a href="http://www.bejson.com/" target="_blank" rel="noopener">http://www.bejson.com/</a></p>
-<p>采集自<a href="https://www.cnblogs.com/cxsabc/p/10627705.html" target="_blank" rel="noopener">零库存的博客</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.bejson.com/">http://www.bejson.com/</a></p>
+<p>采集自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/cxsabc/p/10627705.html">零库存的博客</a></p>
 </blockquote>
 <p>但是有的时候即使使用了@ResponseBody注解，也不行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">publish</span><span class="params">(@RequestBody Comment comment)</span></span>&#123;</span><br><span class="line">        String message = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isNotBlank(comment.getCommentContent()))&#123;</span><br><span class="line">            message = commentService.addComment(comment);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            message = <span class="string">"内容不能为空"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      <span class="comment">//使用return message 会返回到error，使用JSON转化一下就能成功返回到success了</span></span><br><span class="line">        <span class="keyword">return</span> JSON.toJSONString(message);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">publish</span><span class="params">(<span class="meta">@RequestBody</span> Comment comment)</span></span>&#123;</span><br><span class="line">        String message = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isNotBlank(comment.getCommentContent()))&#123;</span><br><span class="line">            message = commentService.addComment(comment);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            message = <span class="string">&quot;内容不能为空&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      <span class="comment">//使用return message 会返回到error，使用JSON转化一下就能成功返回到success了</span></span><br><span class="line">        <span class="keyword">return</span> JSON.toJSONString(message);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -363,7 +363,7 @@
 <li><pre><code class="java"><span class="comment">//String... delValueId  这里的delValueId是一个数组！！！！</span>
 <span class="function">String <span class="title">getUrlParam</span><span class="params">(PmsSearchParam pmsSearchParam, String... delValueId)</span></span>
 <span class="function">String urlParam1 </span>= getUrlParam(pmsSearchParam, delValueId);
-&lt;!--￼<span class="number">2</span>--&gt;</code></pre>
+&lt;!--code￼<span class="number">2</span>--&gt;</code></pre>
 </li>
 <li><p>BigDecimal</p>
 </li>
@@ -376,7 +376,7 @@
 <p>原因就在于，spring boot 2.0对静态资源也进行了拦截，当拦截器拦截到请求之后，但controller里并没有对应的请求时，该请求会被当成是对静态资源的请求。此时的handler就是 ResourceHttpRequestHandler，就会抛出上述错误。</p>
 <p>解决办法就是，在拦截器那里排除静态资源的请求路径</p>
 <p>registry.addInterceptor(new JJRUserLoginInterceptor()).addPathPatterns(“/xx/<strong>“)<br>                .excludePathPatterns(“/xx/</strong>“);    </p>
-<p> 然后再preHandler报错那里加上 instanceof关键字进行判断。<br>————————————————<br>版权声明：本文为CSDN博主「jasapa」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/jiaoshaoping/java/article/details/80526464" target="_blank" rel="noopener">https://blog.csdn.net/jiaoshaoping/java/article/details/80526464</a></p>
+<p> 然后再preHandler报错那里加上 instanceof关键字进行判断。<br>————————————————<br>版权声明：本文为CSDN博主「jasapa」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/jiaoshaoping/java/article/details/80526464">https://blog.csdn.net/jiaoshaoping/java/article/details/80526464</a></p>
 </blockquote>
 <ol start="14">
 <li>当前实体类不包含名为userTypeId的属性!</li>
@@ -495,12 +495,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/06/07/@Autowired,@Qualifier,@Resource/" rel="prev" title="@Autowired,@Qualifier,@Resource">
-      <i class="fa fa-chevron-left"></i> @Autowired,@Qualifier,@Resource
+    <a href="/2020/06/07/PrintWriter%E7%9A%84write()%20%E4%B8%8E%20println()%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/" rel="prev" title="PrintWriter的write() 与 println()的区别？">
+      <i class="fa fa-chevron-left"></i> PrintWriter的write() 与 println()的区别？
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/06/07/PrintWriter%E7%9A%84write()%20%E4%B8%8E%20println()%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/" rel="next" title="PrintWriter的write() 与 println()的区别？">
-      PrintWriter的write() 与 println()的区别？ <i class="fa fa-chevron-right"></i>
+    <a href="/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/" rel="next" title="啊哈！算法">
+      啊哈！算法 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -587,7 +587,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -634,12 +634,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">85k</span>
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:19</span>
 </div>
 
         

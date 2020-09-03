@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -127,7 +127,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">47</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">51</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -279,7 +279,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -307,12 +307,12 @@
 </ul>
 <a id="more"></a>
 
-<h1 id="插数据"><a href="#插数据" class="headerlink" title="插数据"></a>插数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">PUT gmallpms</span><br><span class="line">&#123;</span><br><span class="line"> "mappings": &#123;</span><br><span class="line">   "PmsSkuInfo":&#123;</span><br><span class="line">     "properties": &#123;</span><br><span class="line">       "id":&#123;</span><br><span class="line">        "type": "keyword",</span><br><span class="line">        "index": true</span><br><span class="line">      &#125;,</span><br><span class="line">      "skuName":&#123;</span><br><span class="line">        "type": "text",</span><br><span class="line">        "analyzer": "ik_max_word"</span><br><span class="line">      &#125;,</span><br><span class="line">      "skuDesc":&#123;</span><br><span class="line">        "type": "text"</span><br><span class="line">        , "analyzer": "ik_smart"</span><br><span class="line">      &#125;,</span><br><span class="line">      "catalog3Id":&#123;</span><br><span class="line">        "type": "keyword"</span><br><span class="line">      &#125;,</span><br><span class="line">      "price":&#123;</span><br><span class="line">        "type": "double"</span><br><span class="line">      &#125;,</span><br><span class="line">      "skuDefaultImg":&#123;</span><br><span class="line">        "type": "keyword",</span><br><span class="line">        "index": false</span><br><span class="line">      &#125;,</span><br><span class="line">      "hotScore":&#123;</span><br><span class="line">        "type": "double"</span><br><span class="line">      &#125;,</span><br><span class="line">      "productId":&#123;</span><br><span class="line">        "type": "keyword"</span><br><span class="line">      &#125;,</span><br><span class="line">      "skuAttrValueList":&#123;</span><br><span class="line">        "properties": &#123;</span><br><span class="line">          "attrId":&#123;</span><br><span class="line">            "type":"keyword"</span><br><span class="line">          &#125;,</span><br><span class="line">          "valueId":&#123;</span><br><span class="line">            "type":"keyword"</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">     &#125; </span><br><span class="line">   &#125;</span><br><span class="line"> &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="插数据"><a href="#插数据" class="headerlink" title="插数据"></a>插数据</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">PUT gmallpms</span><br><span class="line">&#123;</span><br><span class="line"> &quot;mappings&quot;: &#123;</span><br><span class="line">   &quot;PmsSkuInfo&quot;:&#123;</span><br><span class="line">     &quot;properties&quot;: &#123;</span><br><span class="line">       &quot;id&quot;:&#123;</span><br><span class="line">        &quot;type&quot;: &quot;keyword&quot;,</span><br><span class="line">        &quot;index&quot;: true</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;skuName&quot;:&#123;</span><br><span class="line">        &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">        &quot;analyzer&quot;: &quot;ik_max_word&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;skuDesc&quot;:&#123;</span><br><span class="line">        &quot;type&quot;: &quot;text&quot;</span><br><span class="line">        , &quot;analyzer&quot;: &quot;ik_smart&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;catalog3Id&quot;:&#123;</span><br><span class="line">        &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;price&quot;:&#123;</span><br><span class="line">        &quot;type&quot;: &quot;double&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;skuDefaultImg&quot;:&#123;</span><br><span class="line">        &quot;type&quot;: &quot;keyword&quot;,</span><br><span class="line">        &quot;index&quot;: false</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;hotScore&quot;:&#123;</span><br><span class="line">        &quot;type&quot;: &quot;double&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;productId&quot;:&#123;</span><br><span class="line">        &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;skuAttrValueList&quot;:&#123;</span><br><span class="line">        &quot;properties&quot;: &#123;</span><br><span class="line">          &quot;attrId&quot;:&#123;</span><br><span class="line">            &quot;type&quot;:&quot;keyword&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;valueId&quot;:&#123;</span><br><span class="line">            &quot;type&quot;:&quot;keyword&quot;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">     &#125; </span><br><span class="line">   &#125;</span><br><span class="line"> &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 <h1 id="查数据"><a href="#查数据" class="headerlink" title="查数据"></a>查数据</h1><p>term：过滤条件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">GET /gmallpms/PmsSkuInfo/_search</span><br><span class="line">&#123;</span><br><span class="line">  "query": &#123;</span><br><span class="line">    "bool": &#123;</span><br><span class="line">      "filter": [</span><br><span class="line">        &#123;</span><br><span class="line">        "term": &#123;</span><br><span class="line">          "price": "1000"</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          "term":&#123;</span><br><span class="line">            "PmsSkuAttrValueList.valueId":"51"</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;],</span><br><span class="line">      "must": [</span><br><span class="line">        &#123;</span><br><span class="line">          "match": &#123;</span><br><span class="line">            "skuName": "小米"</span><br><span class="line">                    &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">GET /gmallpms/PmsSkuInfo/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;bool&quot;: &#123;</span><br><span class="line">      &quot;filter&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">        &quot;term&quot;: &#123;</span><br><span class="line">          &quot;price&quot;: &quot;1000&quot;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;term&quot;:&#123;</span><br><span class="line">            &quot;PmsSkuAttrValueList.valueId&quot;:&quot;51&quot;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;],</span><br><span class="line">      &quot;must&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;match&quot;: &#123;</span><br><span class="line">            &quot;skuName&quot;: &quot;小米&quot;</span><br><span class="line">                    &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -398,12 +398,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/17/%E9%82%AE%E7%AE%B1%E9%AA%8C%E8%AF%81/" rel="prev" title="邮箱验证">
-      <i class="fa fa-chevron-left"></i> 邮箱验证
+    <a href="/2020/05/07/npm%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%20/" rel="prev" title="npm简单使用">
+      <i class="fa fa-chevron-left"></i> npm简单使用
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/05/07/npm%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%20/" rel="next" title="npm简单使用">
-      npm简单使用 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/07/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/" rel="next" title="人生思考">
+      人生思考 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -464,7 +464,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">2.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插数据"><span class="nav-number">3.</span> <span class="nav-text">插数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查数据"><span class="nav-number">4.</span> <span class="nav-text">查数据</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E6%95%B0%E6%8D%AE"><span class="nav-number">3.</span> <span class="nav-text">插数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">4.</span> <span class="nav-text">查数据</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -491,7 +491,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -538,12 +538,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">85k</span>
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:19</span>
 </div>
 
         

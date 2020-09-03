@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">47</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">51</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -280,7 +280,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>385</span>
+              <span>395</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -302,7 +302,7 @@
         <h1 id="下载文件提示-Cannotcall-sendError-after-the-response-has-been-committed"><a href="#下载文件提示-Cannotcall-sendError-after-the-response-has-been-committed" class="headerlink" title="下载文件提示 \Cannotcall sendError() after the response has been committed**"></a>下载文件提示 <strong><em>\</em>Cannotcall sendError() after the response has been committed**</strong></h1><p>出现这个错误，应该是多次response导致的，可以这么理解，将文件写入response后就关闭了socket，这个时候再次发送response给客户端就会出现这个问题。</p>
 <a id="more"></a>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">还加<span class="keyword">return</span> AjaxVoResult 会发生<span class="function">Cannot call <span class="title">sendError</span><span class="params">()</span> after the response has been committed 错误，因为download方法里面已经将要返回的数据写入response里面了</span></span><br><span class="line"><span class="function"><span class="comment">//            所以return null;</span></span></span><br><span class="line"><span class="function"><span class="comment">//            return new AjaxVoResult(StatusCode.SUCCESS.getCode(), StatusCode.SUCCESS.getMessage(), "下载成功");</span></span></span><br><span class="line"><span class="function">    return <span class="keyword">null</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">还加<span class="keyword">return</span> AjaxVoResult 会发生<span class="function">Cannot call <span class="title">sendError</span><span class="params">()</span> after the response has been committed 错误，因为download方法里面已经将要返回的数据写入response里面了</span></span><br><span class="line"><span class="function"><span class="comment">//            所以return null;</span></span></span><br><span class="line"><span class="function"><span class="comment">//            return new AjaxVoResult(StatusCode.SUCCESS.getCode(), StatusCode.SUCCESS.getMessage(), &quot;下载成功&quot;);</span></span></span><br><span class="line"><span class="function">    return <span class="keyword">null</span></span>;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -455,7 +455,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载文件提示-Cannotcall-sendError-after-the-response-has-been-committed"><span class="nav-number">1.</span> <span class="nav-text">下载文件提示 \Cannotcall sendError() after the response has been committed**</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA-Cannotcall-sendError-after-the-response-has-been-committed"><span class="nav-number">1.</span> <span class="nav-text">下载文件提示 \Cannotcall sendError() after the response has been committed**</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -482,7 +482,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -529,12 +529,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">85k</span>
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:19</span>
 </div>
 
         

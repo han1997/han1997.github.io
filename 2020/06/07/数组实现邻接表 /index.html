@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">47</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">51</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -322,15 +322,15 @@
 <p>1 号顶点的其中一条边的编号存储在 first 一中，其余的边可以通过 next 数组找到。</p>
 <p><strong><em>此时遍历某个顶点边的时候的遍历顺序，正好与读入时候的顺序相反。因为在为每个顶点插入边的时候，都是直接插入链表的手部，而不是尾部。\</em></strong></p>
 <p>创建连接表的代码：</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> n,m,i;</span><br><span class="line"><span class="comment">//u、v和w的数组大小要根据实际情况来设置，要比m的最大值要大1</span></span><br><span class="line"><span class="built_in">int</span> u[<span class="number">6</span>],v[<span class="number">6</span>],w[<span class="number">6</span>];</span><br><span class="line"><span class="comment">//first和next的数组大小要根据实际情况来设置，要比n的最大值要大1</span></span><br><span class="line"><span class="built_in">int</span> first[<span class="number">5</span>],next[<span class="number">5</span>];</span><br><span class="line">scanf(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line"><span class="comment">//初始化first数组下标1~n的值为-1，表示1~n顶点暂时都没有边</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    first[i]=<span class="number">-1</span>;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">&#123;</span><br><span class="line">    scanf(<span class="string">"%d %d %d"</span>,&amp;u[i],&amp;v[i],&amp;w[i]);<span class="comment">//读入每一条边</span></span><br><span class="line">    <span class="comment">//下面两句是关键啦</span></span><br><span class="line">    next[i]=first[u[i]];</span><br><span class="line">    first[u[i]]=i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> n,m,i;</span><br><span class="line"><span class="comment">//u、v和w的数组大小要根据实际情况来设置，要比m的最大值要大1</span></span><br><span class="line"><span class="built_in">int</span> u[<span class="number">6</span>],v[<span class="number">6</span>],w[<span class="number">6</span>];</span><br><span class="line"><span class="comment">//first和next的数组大小要根据实际情况来设置，要比n的最大值要大1</span></span><br><span class="line"><span class="built_in">int</span> first[<span class="number">5</span>],next[<span class="number">5</span>];</span><br><span class="line">scanf(<span class="string">&quot;%d %d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line"><span class="comment">//初始化first数组下标1~n的值为-1，表示1~n顶点暂时都没有边</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    first[i]=<span class="number">-1</span>;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">&#123;</span><br><span class="line">    scanf(<span class="string">&quot;%d %d %d&quot;</span>,&amp;u[i],&amp;v[i],&amp;w[i]);<span class="comment">//读入每一条边</span></span><br><span class="line">    <span class="comment">//下面两句是关键啦</span></span><br><span class="line">    next[i]=first[u[i]];</span><br><span class="line">    first[u[i]]=i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>遍历 1 号顶点所有边的代码:</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">k=first[<span class="number">1</span>];<span class="regexp">//</span> <span class="number">1</span>号顶点其中的一条边的编号（其实也是最后读入的边）</span><br><span class="line"><span class="keyword">while</span>(k!=-<span class="number">1</span>) //其余的边都可以在<span class="keyword">next</span>数组中依次找到</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">printf</span>(<span class="string">"%d %d %d\n"</span>,u[k],v[k],w[k]);</span><br><span class="line">    k=<span class="keyword">next</span>[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">k=first[<span class="number">1</span>];<span class="regexp">//</span> <span class="number">1</span>号顶点其中的一条边的编号（其实也是最后读入的边）</span><br><span class="line"><span class="keyword">while</span>(k!=-<span class="number">1</span>) <span class="regexp">//</span>其余的边都可以在<span class="keyword">next</span>数组中依次找到</span><br><span class="line">&#123;</span><br><span class="line">    printf(<span class="string">&quot;%d %d %d\n&quot;</span>,u[k],v[k],w[k]);</span><br><span class="line">    k=<span class="keyword">next</span>[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>遍历每个顶点的所有边的代码:</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="attribute">i</span>=1;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">k</span>=first[i];</span><br><span class="line">    <span class="keyword">while</span>(k!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(<span class="string">"%d %d %d\n"</span>,u[k],v[k],w[k]);</span><br><span class="line">        <span class="attribute">k</span>=next[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="attribute">i</span>=1;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">k</span>=first[i];</span><br><span class="line">    <span class="keyword">while</span>(k!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(<span class="string">&quot;%d %d %d\n&quot;</span>,u[k],v[k],w[k]);</span><br><span class="line">        <span class="attribute">k</span>=next[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>参考原文[<a href="http://developer.51cto.com/art/201404/435072.htm]" target="_blank" rel="noopener">http://developer.51cto.com/art/201404/435072.htm]</a></p>
+<p>参考原文[<a target="_blank" rel="noopener" href="http://developer.51cto.com/art/201404/435072.htm]">http://developer.51cto.com/art/201404/435072.htm]</a></p>
 
     </div>
 
@@ -417,8 +417,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/06/07/%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/" rel="prev" title="人生思考">
-      <i class="fa fa-chevron-left"></i> 人生思考
+    <a href="/2020/06/07/%E5%90%AF%E5%8A%A8MySQL%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%20/" rel="prev" title="启动MySQL遇到错误">
+      <i class="fa fa-chevron-left"></i> 启动MySQL遇到错误
     </a></div>
       <div class="post-nav-item">
     <a href="/2020/06/07/%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%20/" rel="next" title="算法的时间复杂度与空间复杂度">
@@ -483,7 +483,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据："><span class="nav-number">1.</span> <span class="nav-text">数据：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">数据：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -510,7 +510,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -557,12 +557,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">85k</span>
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:19</span>
 </div>
 
         
