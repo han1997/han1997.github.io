@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">59</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/for%E5%BE%AA%E7%8E%AF%E5%8F%8Abreak%E5%92%8Ccontinue%E7%9A%84%E5%8C%BA%E5%88%AB%20/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E5%90%AF%E5%8A%A8MySQL%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -220,7 +220,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/07/for%E5%BE%AA%E7%8E%AF%E5%8F%8Abreak%E5%92%8Ccontinue%E7%9A%84%E5%8C%BA%E5%88%AB%20/" class="post-title-link" itemprop="url">for循环及break和continue的区别</a>
+            <a href="/2020/06/07/%E5%90%AF%E5%8A%A8MySQL%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%20/" class="post-title-link" itemprop="url">启动MySQL遇到错误</a>
         </h2>
 
         <div class="post-meta">
@@ -230,14 +230,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-06-07 22:57:23" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:23+08:00">2020-06-07</time>
+              <time title="创建时间：2020-06-07 22:58:00" itemprop="dateCreated datePublished" datetime="2020-06-07T22:58:00+08:00">2020-06-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-13 11:49:24" itemprop="dateModified" datetime="2020-06-13T11:49:24+08:00">2020-06-13</time>
+                <time title="修改时间：2020-06-13 11:46:24" itemprop="dateModified" datetime="2020-06-13T11:46:24+08:00">2020-06-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +250,7 @@
             </span>
 
           
-            <span id="/2020/06/07/for%E5%BE%AA%E7%8E%AF%E5%8F%8Abreak%E5%92%8Ccontinue%E7%9A%84%E5%8C%BA%E5%88%AB%20/" class="post-meta-item leancloud_visitors" data-flag-title="for循环及break和continue的区别" title="阅读次数">
+            <span id="/2020/06/07/%E5%90%AF%E5%8A%A8MySQL%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%20/" class="post-meta-item leancloud_visitors" data-flag-title="启动MySQL遇到错误" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -265,8 +265,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/06/07/for%E5%BE%AA%E7%8E%AF%E5%8F%8Abreak%E5%92%8Ccontinue%E7%9A%84%E5%8C%BA%E5%88%AB%20/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/for%E5%BE%AA%E7%8E%AF%E5%8F%8Abreak%E5%92%8Ccontinue%E7%9A%84%E5%8C%BA%E5%88%AB%20/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/06/07/%E5%90%AF%E5%8A%A8MySQL%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%20/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E5%90%AF%E5%8A%A8MySQL%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%20/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -276,7 +276,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>562</span>
+              <span>630</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -295,12 +295,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">for</span><span class="params">( 初始语句  ; 执行条件  ; 增量 )</span></span>&#123;</span><br><span class="line">    循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行顺序：1、初始语句 2、执行条件是否符合 3、循环体 4、增加增量</p>
+          <p>具体情况：</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ mysql -uroot -p</span><br><span class="line">Enter password:</span><br><span class="line"><span class="keyword">ERROR </span>2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/06/07/for%E5%BE%AA%E7%8E%AF%E5%8F%8Abreak%E5%92%8Ccontinue%E7%9A%84%E5%8C%BA%E5%88%AB%20/#more" rel="contents">
+              <a class="btn" href="/2020/06/07/%E5%90%AF%E5%8A%A8MySQL%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%20/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -324,7 +323,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/centos7%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81%E5%92%8Croot%E9%97%AE%E9%A2%98%20/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E6%8E%A8%E8%8D%90%E7%9C%8B%E4%B9%A6%20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -338,7 +337,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/07/centos7%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81%E5%92%8Croot%E9%97%AE%E9%A2%98%20/" class="post-title-link" itemprop="url">centos7默认密码和root问题</a>
+            <a href="/2020/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E6%8E%A8%E8%8D%90%E7%9C%8B%E4%B9%A6%20/" class="post-title-link" itemprop="url">数据结构与算法推荐看书</a>
         </h2>
 
         <div class="post-meta">
@@ -348,14 +347,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-06-07 22:57:12" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:12+08:00">2020-06-07</time>
+              <time title="创建时间：2020-06-07 22:58:00" itemprop="dateCreated datePublished" datetime="2020-06-07T22:58:00+08:00">2020-06-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-13 11:48:24" itemprop="dateModified" datetime="2020-06-13T11:48:24+08:00">2020-06-13</time>
+                <time title="修改时间：2020-06-13 11:46:51" itemprop="dateModified" datetime="2020-06-13T11:46:51+08:00">2020-06-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -368,7 +367,7 @@
             </span>
 
           
-            <span id="/2020/06/07/centos7%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81%E5%92%8Croot%E9%97%AE%E9%A2%98%20/" class="post-meta-item leancloud_visitors" data-flag-title="centos7默认密码和root问题" title="阅读次数">
+            <span id="/2020/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E6%8E%A8%E8%8D%90%E7%9C%8B%E4%B9%A6%20/" class="post-meta-item leancloud_visitors" data-flag-title="数据结构与算法推荐看书" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -383,8 +382,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/06/07/centos7%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81%E5%92%8Croot%E9%97%AE%E9%A2%98%20/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/centos7%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81%E5%92%8Croot%E9%97%AE%E9%A2%98%20/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E6%8E%A8%E8%8D%90%E7%9C%8B%E4%B9%A6%20/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E6%8E%A8%E8%8D%90%E7%9C%8B%E4%B9%A6%20/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -394,7 +393,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>382</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -413,955 +412,983 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="parallels-desktop-安装-centos7-默认密码和-root-问题"><a href="#parallels-desktop-安装-centos7-默认密码和-root-问题" class="headerlink" title="parallels desktop 安装 centos7 默认密码和 root 问题"></a>parallels desktop 安装 centos7 默认密码和 root 问题</h1><p>安装时只设置了 parallels 的密码，并没有设置 root 密码。<br>无法进行 su 命令，提示 Authentication failure。</p>
-<blockquote>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[parallels<span class="meta">@centos</span><span class="number">-7</span> redis]$ su <span class="string">Password:</span> <span class="string">su:</span> Authentication failure</span><br></pre></td></tr></table></figure>
+          <p>从网上摘来的,点击查看原文[<a href="https://www.cnblogs.com/wangyajunblog/p/10710480.html],如果侵权了请联系我删除" target="_blank" rel="noopener">https://www.cnblogs.com/wangyajunblog/p/10710480.html],如果侵权了请联系我删除</a></p>
+<p>我是准备从入门开始了,虽然学过,但是都忘得差不多了.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E6%8E%A8%E8%8D%90%E7%9C%8B%E4%B9%A6%20/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hhy">
+      <meta itemprop="description" content="比昨天更好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汇源果汁吖！">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/07/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">面试问题小记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-07 22:57:59" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:59+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-13 11:46:16" itemprop="dateModified" datetime="2020-06-13T11:46:16+08:00">2020-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/07/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="面试问题小记录" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/07/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="J2EE"><a href="#J2EE" class="headerlink" title="J2EE"></a>J2EE</h1><h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p><strong>GET/POST</strong></p>
+<ol>
+<li><p>GET/POST <a href="https://www.zhihu.com/question/28586791" target="_blank" rel="noopener">逼乎文章</a></p>
+<ol>
+<li><p>浏览器上的get和post</p>
+<ul>
+<li><p>get用来获取浏览器上的资源</p>
+</li>
+<li><p>post用来向服务器发起一个请求/表单</p>
+</li>
+</ul>
+</li>
+<li><p>接口中的get/post  或者可以说是REST中的get/post</p>
+</li>
+<li><p>安全性–本质上都是http协议，都不安全</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/07/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%B0%8F%E8%AE%B0%E5%BD%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1session%E5%81%9A%E7%99%BB%E5%BD%95%E8%AE%B0%E5%BD%95%EF%BC%8C%E5%86%99%E6%8B%A6%E6%88%AA%E5%99%A8%E5%81%9A%E6%9D%83%E9%99%90%E9%AA%8C%E8%AF%81%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hhy">
+      <meta itemprop="description" content="比昨天更好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汇源果汁吖！">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/07/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1session%E5%81%9A%E7%99%BB%E5%BD%95%E8%AE%B0%E5%BD%95%EF%BC%8C%E5%86%99%E6%8B%A6%E6%88%AA%E5%99%A8%E5%81%9A%E6%9D%83%E9%99%90%E9%AA%8C%E8%AF%81%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">记录一次session做登录记录，写拦截器做权限验证时遇到的问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-07 22:57:58" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:58+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-13 11:45:31" itemprop="dateModified" datetime="2020-06-13T11:45:31+08:00">2020-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/07/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1session%E5%81%9A%E7%99%BB%E5%BD%95%E8%AE%B0%E5%BD%95%EF%BC%8C%E5%86%99%E6%8B%A6%E6%88%AA%E5%99%A8%E5%81%9A%E6%9D%83%E9%99%90%E9%AA%8C%E8%AF%81%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-meta-item leancloud_visitors" data-flag-title="记录一次session做登录记录，写拦截器做权限验证时遇到的问题" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/07/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1session%E5%81%9A%E7%99%BB%E5%BD%95%E8%AE%B0%E5%BD%95%EF%BC%8C%E5%86%99%E6%8B%A6%E6%88%AA%E5%99%A8%E5%81%9A%E6%9D%83%E9%99%90%E9%AA%8C%E8%AF%81%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1session%E5%81%9A%E7%99%BB%E5%BD%95%E8%AE%B0%E5%BD%95%EF%BC%8C%E5%86%99%E6%8B%A6%E6%88%AA%E5%99%A8%E5%81%9A%E6%9D%83%E9%99%90%E9%AA%8C%E8%AF%81%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="记录一次session做登录记录，写拦截器做权限验证时遇到的问题"><a href="#记录一次session做登录记录，写拦截器做权限验证时遇到的问题" class="headerlink" title="记录一次session做登录记录，写拦截器做权限验证时遇到的问题"></a>记录一次session做登录记录，写拦截器做权限验证时遇到的问题</h1><h2 id="问题发生前提"><a href="#问题发生前提" class="headerlink" title="问题发生前提"></a>问题发生前提</h2><ol>
+<li>登录之后写session作为登录状态记录</li>
+<li>写拦截器拦截所以请求</li>
+<li>某些接口有自定义注解@loginrequired(require=””,role=?)</li>
+<li>当required为ture，必须要登录，role为用户权限，低于某种权限不允许访问
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/07/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1session%E5%81%9A%E7%99%BB%E5%BD%95%E8%AE%B0%E5%BD%95%EF%BC%8C%E5%86%99%E6%8B%A6%E6%88%AA%E5%99%A8%E5%81%9A%E6%9D%83%E9%99%90%E9%AA%8C%E8%AF%81%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8EV2.0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hhy">
+      <meta itemprop="description" content="比昨天更好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汇源果汁吖！">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8EV2.0/" class="post-title-link" itemprop="url">谷粒商城</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-07 22:57:57" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:57+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-13 11:45:22" itemprop="dateModified" datetime="2020-06-13T11:45:22+08:00">2020-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8EV2.0/" class="post-meta-item leancloud_visitors" data-flag-title="谷粒商城" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8EV2.0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8EV2.0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="电商项目了解一下"><a href="#电商项目了解一下" class="headerlink" title="电商项目了解一下"></a>电商项目了解一下</h3><ul>
+<li>访问量大</li>
+<li>数据量大</li>
+<li>并发高</li>
+<li>业务复杂，技术点多</li>
+</ul>
+<h3 id="电商分类"><a href="#电商分类" class="headerlink" title="电商分类"></a>电商分类</h3><ul>
+<li>B2C – Business To Consumer
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/07/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8EV2.0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%A4%8D%E4%B9%A0-%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4%20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hhy">
+      <meta itemprop="description" content="比昨天更好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汇源果汁吖！">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/07/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%A4%8D%E4%B9%A0-%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4%20/" class="post-title-link" itemprop="url">高数下复习-解题步骤</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-07 22:57:56" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:56+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-13 11:45:15" itemprop="dateModified" datetime="2020-06-13T11:45:15+08:00">2020-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/07/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%A4%8D%E4%B9%A0-%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4%20/" class="post-meta-item leancloud_visitors" data-flag-title="高数下复习-解题步骤" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/07/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%A4%8D%E4%B9%A0-%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4%20/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%A4%8D%E4%B9%A0-%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4%20/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>796</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>记录一下我苦逼的清考高数。</p>
+<p>高数考试应对</p>
+<h1 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h1><h2 id="两平面的夹角"><a href="#两平面的夹角" class="headerlink" title="两平面的夹角"></a>两平面的夹角</h2><p>a·b=0</p>
+<h2 id="函数在一点处连续性、可偏导性、可微性判断"><a href="#函数在一点处连续性、可偏导性、可微性判断" class="headerlink" title="函数在一点处连续性、可偏导性、可微性判断"></a>函数在一点处连续性、可偏导性、可微性判断</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/07/%E9%AB%98%E6%95%B0%E4%B8%8B%E5%A4%8D%E4%B9%A0-%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4%20/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E7%AC%94%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hhy">
+      <meta itemprop="description" content="比昨天更好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汇源果汁吖！">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/07/%E7%AC%94%E8%AF%95/" class="post-title-link" itemprop="url">笔试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-07 22:57:54" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:54+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-13 11:44:59" itemprop="dateModified" datetime="2020-06-13T11:44:59+08:00">2020-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/07/%E7%AC%94%E8%AF%95/" class="post-meta-item leancloud_visitors" data-flag-title="笔试" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/07/%E7%AC%94%E8%AF%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E7%AC%94%E8%AF%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>867</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li><p>Cookie，Session</p>
+<ol>
+<li>Cookie一般保存在浏览器，不安全；Session一般保存在服务器，Session多了服务器压力大</li>
+<li>Cookie只能存储String类型数据，Session可以保存任意类型数据
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/07/%E7%AC%94%E8%AF%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hhy">
+      <meta itemprop="description" content="比昨天更好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汇源果汁吖！">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/" class="post-title-link" itemprop="url">啊哈！算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-07 22:57:53" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:53+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-13 11:44:52" itemprop="dateModified" datetime="2020-06-13T11:44:52+08:00">2020-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/" class="post-meta-item leancloud_visitors" data-flag-title="啊哈！算法" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我基础太差了。就从最简单，能看下去的这本书开始吧</p>
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/07/%E5%95%8A%E5%93%88%EF%BC%81%E7%AE%97%E6%B3%95%20/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/PrintWriter%E7%9A%84write()%20%E4%B8%8E%20println()%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hhy">
+      <meta itemprop="description" content="比昨天更好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汇源果汁吖！">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/07/PrintWriter%E7%9A%84write()%20%E4%B8%8E%20println()%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/" class="post-title-link" itemprop="url">PrintWriter的write() 与 println()的区别？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-07 22:57:52" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:52+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-13 11:39:01" itemprop="dateModified" datetime="2020-06-13T11:39:01+08:00">2020-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/07/PrintWriter%E7%9A%84write()%20%E4%B8%8E%20println()%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/" class="post-meta-item leancloud_visitors" data-flag-title="PrintWriter的write() 与 println()的区别？" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/07/PrintWriter%E7%9A%84write()%20%E4%B8%8E%20println()%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/PrintWriter%E7%9A%84write()%20%E4%B8%8E%20println()%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>118</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="PrintWriter的write-与-println-的区别？"><a href="#PrintWriter的write-与-println-的区别？" class="headerlink" title="PrintWriter的write() 与 println()的区别？"></a>PrintWriter的write() 与 println()的区别？</h1><p>println(“xxx”) ==&gt; write(“xxx”) + newLine()</p>
+<p>newLine()是<strong>私有方法</strong>,不可以直接调用</p>
+<p>newLine()调用flush() 写缓冲</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E5%9C%A8%E4%BD%A0%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%E5%9B%B0%E9%9A%BE%E3%80%81%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="hhy">
+      <meta itemprop="description" content="比昨天更好">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="汇源果汁吖！">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/07/%E5%9C%A8%E4%BD%A0%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%E5%9B%B0%E9%9A%BE%E3%80%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">在你项目中遇到了什么困难、问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-07 22:57:52" itemprop="dateCreated datePublished" datetime="2020-06-07T22:57:52+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-13 11:47:56" itemprop="dateModified" datetime="2020-06-13T11:47:56+08:00">2020-06-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/07/%E5%9C%A8%E4%BD%A0%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%E5%9B%B0%E9%9A%BE%E3%80%81%E9%97%AE%E9%A2%98/" class="post-meta-item leancloud_visitors" data-flag-title="在你项目中遇到了什么困难、问题" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/07/%E5%9C%A8%E4%BD%A0%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%E5%9B%B0%E9%9A%BE%E3%80%81%E9%97%AE%E9%A2%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E5%9C%A8%E4%BD%A0%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%E5%9B%B0%E9%9A%BE%E3%80%81%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li><p>Spring容器注入问题</p>
+</li>
+<li><p>/list/keyword—–/list/catalog3Id</p>
+<ul>
+<li><blockquote>
+<p>/list/{key}</p>
+<p>if(key == “keyword”){}</p>
+<p>else{}</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>new Object(){</p>
+<p>  keyword,</p>
+<p>catalog3Id</p>
+<p>}</p>
 </blockquote>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/06/07/centos7%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81%E5%92%8Croot%E9%97%AE%E9%A2%98%20/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/MySQL%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90%20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hhy">
-      <meta itemprop="description" content="比昨天更好">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="汇源果汁吖！">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/07/MySQL%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90%20/" class="post-title-link" itemprop="url">MySQL简单例子</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-07 22:53:52" itemprop="dateCreated datePublished" datetime="2020-06-07T22:53:52+08:00">2020-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-13 11:51:29" itemprop="dateModified" datetime="2020-06-13T11:51:29+08:00">2020-06-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/07/MySQL%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90%20/" class="post-meta-item leancloud_visitors" data-flag-title="MySQL简单例子" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/07/MySQL%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90%20/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/MySQL%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90%20/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>真的是一些简单例子，我还写了好久</p>
-<h1 id="database-stu-sql-文件内容"><a href="#database-stu-sql-文件内容" class="headerlink" title="database.stu.sql 文件内容:"></a>database.stu.sql 文件内容:</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/07/MySQL%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90%20/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%20Cannotcall%20sendError()%20after%20the%20response%20has%20been%20committed/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hhy">
-      <meta itemprop="description" content="比昨天更好">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="汇源果汁吖！">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/07/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%20Cannotcall%20sendError()%20after%20the%20response%20has%20been%20committed/" class="post-title-link" itemprop="url">下载文件提示 Cannotcall sendError() after the response has been committed</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-07 22:11:52" itemprop="dateCreated datePublished" datetime="2020-06-07T22:11:52+08:00">2020-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-13 11:47:23" itemprop="dateModified" datetime="2020-06-13T11:47:23+08:00">2020-06-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/07/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%20Cannotcall%20sendError()%20after%20the%20response%20has%20been%20committed/" class="post-meta-item leancloud_visitors" data-flag-title="下载文件提示 Cannotcall sendError() after the response has been committed" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/07/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%20Cannotcall%20sendError()%20after%20the%20response%20has%20been%20committed/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%20Cannotcall%20sendError()%20after%20the%20response%20has%20been%20committed/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>385</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="下载文件提示-Cannotcall-sendError-after-the-response-has-been-committed"><a href="#下载文件提示-Cannotcall-sendError-after-the-response-has-been-committed" class="headerlink" title="下载文件提示 \Cannotcall sendError() after the response has been committed**"></a>下载文件提示 <strong><em>\</em>Cannotcall sendError() after the response has been committed**</strong></h1><p>出现这个错误，应该是多次response导致的，可以这么理解，将文件写入response后就关闭了socket，这个时候再次发送response给客户端就会出现这个问题。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/07/%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%20Cannotcall%20sendError()%20after%20the%20response%20has%20been%20committed/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/MISCONF%20Redis%20is%20configured%20to%20save%20RDB%20snapshots,%20but%20it%20is%20currently%20not%20able%20to%20persist%20on%20disk/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hhy">
-      <meta itemprop="description" content="比昨天更好">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="汇源果汁吖！">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/07/MISCONF%20Redis%20is%20configured%20to%20save%20RDB%20snapshots,%20but%20it%20is%20currently%20not%20able%20to%20persist%20on%20disk/" class="post-title-link" itemprop="url">MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-07 22:07:52" itemprop="dateCreated datePublished" datetime="2020-06-07T22:07:52+08:00">2020-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-13 11:51:18" itemprop="dateModified" datetime="2020-06-13T11:51:18+08:00">2020-06-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/07/MISCONF%20Redis%20is%20configured%20to%20save%20RDB%20snapshots,%20but%20it%20is%20currently%20not%20able%20to%20persist%20on%20disk/" class="post-meta-item leancloud_visitors" data-flag-title="MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/07/MISCONF%20Redis%20is%20configured%20to%20save%20RDB%20snapshots,%20but%20it%20is%20currently%20not%20able%20to%20persist%20on%20disk/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/MISCONF%20Redis%20is%20configured%20to%20save%20RDB%20snapshots,%20but%20it%20is%20currently%20not%20able%20to%20persist%20on%20disk/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>793</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息"></a>错误信息</h1><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis.clients.jedis.exceptions.JedisDataException: MISCONF Redis is configured to save RDB snapshots, but it is currently<span class="built_in"> not </span>able to persist on disk. Commands that may modify the data set are disabled, because this<span class="built_in"> instance </span>is configured to report errors during writes<span class="built_in"> if </span>RDB snapshotting fails (stop-writes-on-bgsave-error option). Please<span class="built_in"> check </span>the Redis logs for details about the RDB error.</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/07/MISCONF%20Redis%20is%20configured%20to%20save%20RDB%20snapshots,%20but%20it%20is%20currently%20not%20able%20to%20persist%20on%20disk/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/macOS%20%E4%BD%BF%E7%94%A8%20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hhy">
-      <meta itemprop="description" content="比昨天更好">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="汇源果汁吖！">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/07/macOS%20%E4%BD%BF%E7%94%A8%20/" class="post-title-link" itemprop="url">macOS使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-07 22:07:12" itemprop="dateCreated datePublished" datetime="2020-06-07T22:07:12+08:00">2020-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-13 11:51:12" itemprop="dateModified" datetime="2020-06-13T11:51:12+08:00">2020-06-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/07/macOS%20%E4%BD%BF%E7%94%A8%20/" class="post-meta-item leancloud_visitors" data-flag-title="macOS使用" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/07/macOS%20%E4%BD%BF%E7%94%A8%20/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/macOS%20%E4%BD%BF%E7%94%A8%20/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>415</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>自从一时头脑发热换了 air 到现在也用了一年了,现在重新记录一下使用—心得?技巧?</p>
-<h1 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h1><h2 id="输入法"><a href="#输入法" class="headerlink" title="输入法"></a>输入法</h2><p>已经习惯了双拼啦</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/07/macOS%20%E4%BD%BF%E7%94%A8%20/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/Serializable%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E7%94%A8%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hhy">
-      <meta itemprop="description" content="比昨天更好">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="汇源果汁吖！">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/07/Serializable%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E7%94%A8%E6%B3%95/" class="post-title-link" itemprop="url">Java序列化</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-07 22:06:52" itemprop="dateCreated datePublished" datetime="2020-06-07T22:06:52+08:00">2020-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-13 11:52:19" itemprop="dateModified" datetime="2020-06-13T11:52:19+08:00">2020-06-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/07/Serializable%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E7%94%A8%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="Java序列化" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/07/Serializable%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E7%94%A8%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/Serializable%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E7%94%A8%E6%B3%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>767</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="为什么需要序列化"><a href="#为什么需要序列化" class="headerlink" title="为什么需要序列化"></a>为什么需要序列化</h1><p>1，存储对象在存储介质中，以便在下次使用的时候，可以很快捷的重建一个副本。也就是When the resulting series of bits is reread according to the serialization format, it can be used to create a semantically identical clone of the original object.</p>
-<p>问题：我没有实现序列化的时候，我一样可以存入到我的sqlserver或者MySQL、Oracle数据库中啊，为什么一定要序列化才能存储呢？？？？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/07/Serializable%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%84%8F%E4%B9%89%E5%92%8C%E7%94%A8%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E5%B7%B2%E5%8F%91%E7%8E%B0%E7%9A%84%E8%96%84%E5%BC%B1%E7%82%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hhy">
-      <meta itemprop="description" content="比昨天更好">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="汇源果汁吖！">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/07/%E5%B7%B2%E5%8F%91%E7%8E%B0%E7%9A%84%E8%96%84%E5%BC%B1%E7%82%B9/" class="post-title-link" itemprop="url">已发现的薄弱点</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-07 22:04:52" itemprop="dateCreated datePublished" datetime="2020-06-07T22:04:52+08:00">2020-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-13 11:47:44" itemprop="dateModified" datetime="2020-06-13T11:47:44+08:00">2020-06-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/07/%E5%B7%B2%E5%8F%91%E7%8E%B0%E7%9A%84%E8%96%84%E5%BC%B1%E7%82%B9/" class="post-meta-item leancloud_visitors" data-flag-title="已发现的薄弱点" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/07/%E5%B7%B2%E5%8F%91%E7%8E%B0%E7%9A%84%E8%96%84%E5%BC%B1%E7%82%B9/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E5%B7%B2%E5%8F%91%E7%8E%B0%E7%9A%84%E8%96%84%E5%BC%B1%E7%82%B9/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>33</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="已发现的薄弱点"><a href="#已发现的薄弱点" class="headerlink" title="已发现的薄弱点"></a>已发现的薄弱点</h1><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/07/%E5%B7%B2%E5%8F%91%E7%8E%B0%E7%9A%84%E8%96%84%E5%BC%B1%E7%82%B9/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%ABGM219-S%E7%A0%B4%E8%A7%A3%20%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%92%8C%E5%AF%86%E7%A0%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hhy">
-      <meta itemprop="description" content="比昨天更好">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="汇源果汁吖！">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/07/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%ABGM219-S%E7%A0%B4%E8%A7%A3%20%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%92%8C%E5%AF%86%E7%A0%81/" class="post-title-link" itemprop="url">移动光猫GM219-S破解 超级用户和密码</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-07 22:02:52" itemprop="dateCreated datePublished" datetime="2020-06-07T22:02:52+08:00">2020-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-10 21:53:52" itemprop="dateModified" datetime="2020-06-10T21:53:52+08:00">2020-06-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/07/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%ABGM219-S%E7%A0%B4%E8%A7%A3%20%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%92%8C%E5%AF%86%E7%A0%81/" class="post-meta-item leancloud_visitors" data-flag-title="移动光猫GM219-S破解 超级用户和密码" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/07/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%ABGM219-S%E7%A0%B4%E8%A7%A3%20%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%92%8C%E5%AF%86%E7%A0%81/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E7%A7%BB%E5%8A%A8%E5%85%89%E7%8C%ABGM219-S%E7%A0%B4%E8%A7%A3%20%E8%B6%85%E7%BA%A7%E7%94%A8%E6%88%B7%E5%92%8C%E5%AF%86%E7%A0%81/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>274</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ol>
-<li><p>查看自己家猫的背面，用普通user账户登录。</p>
-</li>
-<li><p>此时，在地址栏输入 <a href="http://m.my0511.com/goto.php?gourl=http%3A%2F%2F192.168.1.1%2Fcgi-bin%2Fupgrade.asp" target="_blank" rel="noopener">http://192.168.1.1/cgi-bin/upgrade.asp</a> ，然后回车。选择“romfile”（默认就是这个），然后点击“ROMFILE BACKUP”，将此文件保存到电脑。</p>
-</li>
-<li><p>用记事本打开刚刚下载的配置文件romfile.cfg，搜索 web_passwd ，会搜到4处，<br>其中username=”CMCCAdmin” web_passwd=”CMCCAdmina<strong>***</strong>“ 就是你自己对应的管理员密码。</p>
-</li>
-</ol>
-<p>然后你就可以为所欲为了。</p>
-<p>本机：</p>
-<p>CMCCAdmin</p>
-<p>CMCCAdminoFUK11dn</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E8%A6%81%E5%A5%BD%E5%A5%BD%E7%A0%94%E7%A9%B6%E7%9A%84%E5%86%85%E5%AE%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="hhy">
-      <meta itemprop="description" content="比昨天更好">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="汇源果汁吖！">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/07/%E8%A6%81%E5%A5%BD%E5%A5%BD%E7%A0%94%E7%A9%B6%E7%9A%84%E5%86%85%E5%AE%B9/" class="post-title-link" itemprop="url">要好好研究的内容</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-07 22:01:52" itemprop="dateCreated datePublished" datetime="2020-06-07T22:01:52+08:00">2020-06-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-13 11:47:32" itemprop="dateModified" datetime="2020-06-13T11:47:32+08:00">2020-06-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/07/%E8%A6%81%E5%A5%BD%E5%A5%BD%E7%A0%94%E7%A9%B6%E7%9A%84%E5%86%85%E5%AE%B9/" class="post-meta-item leancloud_visitors" data-flag-title="要好好研究的内容" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/07/%E8%A6%81%E5%A5%BD%E5%A5%BD%E7%A0%94%E7%A9%B6%E7%9A%84%E5%86%85%E5%AE%B9/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/%E8%A6%81%E5%A5%BD%E5%A5%BD%E7%A0%94%E7%A9%B6%E7%9A%84%E5%86%85%E5%AE%B9/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>416</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ol>
-<li><p>lambada</p>
-</li>
-<li><p>设计模式</p>
-</li>
-<li><p>stream</p>
-</li>
-<li><p>enum</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/07/%E8%A6%81%E5%A5%BD%E5%A5%BD%E7%A0%94%E7%A9%B6%E7%9A%84%E5%86%85%E5%AE%B9/#more" rel="contents">
+              <a class="btn" href="/2020/06/07/%E5%9C%A8%E4%BD%A0%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%E5%9B%B0%E9%9A%BE%E3%80%81%E9%97%AE%E9%A2%98/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1384,7 +1411,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1450,7 +1477,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">59</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1510,12 +1537,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">75k</span>
+    <span title="站点总字数">85k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:08</span>
+    <span title="站点阅读时长">1:17</span>
 </div>
 
         
